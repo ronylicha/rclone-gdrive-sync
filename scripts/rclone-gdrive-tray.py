@@ -270,9 +270,8 @@ def create_icon_image(authenticated, syncing, percent):
             draw.arc([1, 1, size-1, size-1], start=-90, end=end_angle,
                      fill=(52, 168, 83, 255), width=3)
     else:
-        # Vert = prêt et authentifié
-        draw.ellipse([dot_cx - dot_r, dot_cy - dot_r, dot_cx + dot_r, dot_cy + dot_r],
-                     fill=(52, 168, 83, 255), outline=(255, 255, 255, 255), width=2)
+        # Vert = prêt et authentifié → retourner None pour utiliser l'icône du thème GTK
+        return None
 
     return img
 
@@ -813,7 +812,10 @@ class TrayApp:
         new_state = (s['authenticated'], s['syncing'], int(s['percent']))
         if new_state != self._last_icon_state:
             img = create_icon_image(*new_state)
-            self.icon.icon = img
+            # Ne mettre à jour l'icône que si un indicateur de statut est nécessaire
+            # Sinon, laisser GNOME utiliser l'icône du thème GTK via IconName D-Bus
+            if img is not None:
+                self.icon.icon = img
 
             tooltip_parts = []
             if not s['authenticated']:
