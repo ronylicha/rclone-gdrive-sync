@@ -1,5 +1,7 @@
 # rclone-gdrive-sync
 
+![Icon](docs/icon-preview.png)
+
 Synchronisation bidirectionnelle automatique entre votre poste Linux et Google Drive, avec indicateur tray, mode temps réel (inotify) et gestion OAuth.
 
 ## Fonctionnalités
