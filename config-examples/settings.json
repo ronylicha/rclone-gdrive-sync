@@ -1,0 +1,20 @@
+{
+  "sync_interval_minutes": 5,
+  "realtime_watch": false,
+  "watch_debounce_seconds": 30,
+  "excluded_patterns": [
+    "node_modules/**",
+    "__pycache__/**",
+    ".cache/**",
+    "*.tmp",
+    ".venv/**",
+    "*.pyc",
+    "dist/**",
+    "build/**",
+    ".next/**",
+    ".turbo/**",
+    "coverage/**",
+    "**/.env",
+    "**/.env.*"
+  ]
+}

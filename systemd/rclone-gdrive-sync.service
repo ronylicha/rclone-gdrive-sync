@@ -1,0 +1,15 @@
+[Unit]
+Description=Rclone GDrive Sync Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/rclone-gdrive-sync-wrapper.sh
+StandardOutput=append:%h/.local/share/rclone-gdrive-sync/sync.log
+StandardError=append:%h/.local/share/rclone-gdrive-sync/sync.log
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
+
+[Install]
+WantedBy=default.target

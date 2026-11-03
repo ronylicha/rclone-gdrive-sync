@@ -1,0 +1,15 @@
+[Unit]
+Description=Rclone GDrive Realtime Watch (inotifywait)
+After=network-online.target rclone-gdrive-tray.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/rclone-gdrive-watch.sh
+Restart=on-failure
+RestartSec=10
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
+
+[Install]
+WantedBy=default.target

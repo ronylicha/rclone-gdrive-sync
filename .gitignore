@@ -1,0 +1,57 @@
+# Credentials et secrets - NE JAMAIS COMMITTER
+rclone.conf
+*.key
+*.pem
+*.p12
+*.json.token
+token.json
+credentials.json
+client_secret*.json
+service_account*.json
+
+# Configuration locale avec données personnelles
+config/settings.local.json
+config/dirs.local.json
+
+# Logs et données runtime
+*.log
+logs/
+sync.log
+watch.log
+
+# Fichiers temporaires et lock
+*.lock
+*.tmp
+*.swp
+*.swo
+*~
+/tmp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Environnements virtuels et dépendances locales
+.env
+.env.*
+!.env.example
+
+# Backups et fichiers de récupération
+*.bak
+*.backup
+*.orig

@@ -1,0 +1,10 @@
+{
+  "directories": [
+    {"name": "config-git", "src": "~/.config/git", "dst": "gdrive:SyncPC/config-git", "enabled": true, "type": "full"},
+    {"name": "dot-claude", "src": "~/.claude", "dst": "gdrive:SyncPC/dot-claude", "enabled": true, "type": "selective", "includes": ["skills/**", "plugins/**", "scripts/**", "CLAUDE.md", "agents/**", "commands/**", "docs/**", "hooks/**"]},
+    {"name": "dot-codex", "src": "~/.codex", "dst": "gdrive:SyncPC/dot-codex", "enabled": true, "type": "selective", "includes": ["memories/**", "skills/**", "AGENTS.md", "config.toml"]},
+    {"name": "Assets-Projets", "src": "~/Assets Projets", "dst": "gdrive:SyncPC/Assets-Projets", "enabled": true, "type": "full"},
+    {"name": "Projets", "src": "~/Projets", "dst": "gdrive:SyncPC/Projets", "enabled": true, "type": "full"},
+    {"name": "projects", "src": "~/projects", "dst": "gdrive:SyncPC/projects", "enabled": true, "type": "full"}
+  ]
+}
